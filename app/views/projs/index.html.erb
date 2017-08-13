@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Projs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>String</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projs.each do |proj| %>
+      <tr>
+        <td><%= proj.title %></td>
+        <td><%= proj.string %></td>
+        <td><%= proj.content %></td>
+        <td><%= link_to 'Show', proj %></td>
+        <td><%= link_to 'Edit', edit_proj_path(proj) %></td>
+        <td><%= link_to 'Destroy', proj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proj', new_proj_path %>
